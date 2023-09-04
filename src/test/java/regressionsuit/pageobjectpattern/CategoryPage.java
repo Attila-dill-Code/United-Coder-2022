@@ -9,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 public class CategoryPage {
     WebDriver driver;
     FunctionPage functionPage;
-    int timeout = 10;
 
     public CategoryPage(WebDriver driver){
         this.driver = driver;
@@ -23,14 +22,14 @@ public class CategoryPage {
     WebElement successfullyDeletedMassage;
 
     public void deleteCategory(){
-        functionPage.waitUnitElementPresent(deleteIcon,timeout);
+        functionPage.waitUnitElementPresent(deleteIcon);
         deleteIcon.click();
         Alert alert = driver.switchTo().alert();
-        functionPage.waitAlertPresent(timeout);
+        functionPage.waitAlertPresent();
         alert.accept();
     }
     public boolean isCategoryDeleted(){
-        functionPage.waitUnitElementPresent(successfullyDeletedMassage,timeout);
+        functionPage.waitUnitElementPresent(successfullyDeletedMassage);
         if (successfullyDeletedMassage.isDisplayed()){
             return true;
         }else {

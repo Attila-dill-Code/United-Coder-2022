@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "https://testng.com/testng-1.0.dtd">
+<suite name="CubeCart Functional Test">
+    <listeners>
+        <listener class-name="org.testng.reporters.EmailableReporter">
+
+        </listener>
+    </listeners>
+    <parameter name="url" value="http://cubecartuat.unitedcoder.com/admin_tu8sml.php"></parameter>
+    <parameter name="username" value="testautomation1"></parameter>
+    <parameter name="password" value="automation123!"></parameter>
+    <test name="Demo-Test1">
+        <classes>
+            <class name="regressionsuit.testngframework.TestNGRunner2">
+                <!--                <methods>-->
+                <!--                    <include name="loginTest"/>-->
+                <!--                    <include name="addCustomer"/>-->
+                <!--                </methods>-->
+            </class>
+<!--            <class name="regressionsuit.junitframework.JUnittestDemo1">-->
+<!--                <methods>-->
+<!--                    <include name="squareRootTest"/>-->
+<!--                    <include name="compareTwoString"/>-->
+<!--                    <include name="power"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="regressionsuit.junitframework.JUnittestDemo2">-->
+<!--                <methods>-->
+<!--                    <include name="addProduct"/>-->
+<!--                    <include name="deleteProduct"/>-->
+<!--                    <include name="updateProductInfo"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+        </classes>
+    </test>
+<!--    <test name="Demo-Test2">-->
+
+<!--    </test>-->
+</suite>

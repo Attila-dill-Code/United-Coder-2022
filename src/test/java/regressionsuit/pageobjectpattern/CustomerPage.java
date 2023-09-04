@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 public class CustomerPage {
     WebDriver driver;
     FunctionPage functionPage;
-    int timeout = 10;
     @FindBy(linkText = "Add Customer")
     WebElement addCustomerLink;
     @FindBy(id = "cust-firstname")
@@ -28,20 +27,32 @@ public class CustomerPage {
         functionPage = new FunctionPage(driver);
     }
     public void addCustomer(){
-        functionPage.waitUnitElementPresent(addCustomerLink,timeout);
+        functionPage.waitUnitElementPresent(addCustomerLink);
         addCustomerLink.click();
-        functionPage.waitUnitElementPresent(firstNameField,timeout);
+        functionPage.waitUnitElementPresent(firstNameField);
         firstNameField.sendKeys(functionPage.generateFakeName());
-        functionPage.waitUnitElementPresent(lastNameField,timeout);
+        functionPage.waitUnitElementPresent(lastNameField);
         lastNameField.sendKeys(functionPage.generateFakeName());
-        functionPage.waitUnitElementPresent(emailField,timeout);
+        functionPage.waitUnitElementPresent(emailField);
         emailField.sendKeys(functionPage.generateFakeName()+"@gmail.com");
-        functionPage.waitUnitElementPresent(saveButton,timeout);
+        functionPage.waitUnitElementPresent(saveButton);
+        saveButton.click();
+    }
+    public void addCustomer(String firstName, String lastName,String email){
+        functionPage.waitUnitElementPresent(addCustomerLink);
+        addCustomerLink.click();
+        functionPage.waitUnitElementPresent(firstNameField);
+        firstNameField.sendKeys(functionPage.generateFakeName());
+        functionPage.waitUnitElementPresent(lastNameField);
+        lastNameField.sendKeys(functionPage.generateFakeName());
+        functionPage.waitUnitElementPresent(emailField);
+        emailField.sendKeys(functionPage.generateFakeName()+"@gmail.com");
+        functionPage.waitUnitElementPresent(saveButton);
         saveButton.click();
     }
 
     public boolean isCustomerAddedSuccessfully(){
-        functionPage.waitUnitElementPresent(customerSuccessMassage,timeout);
+        functionPage.waitUnitElementPresent(customerSuccessMassage);
         if (customerSuccessMassage.isDisplayed()){
             return true;
         }else {

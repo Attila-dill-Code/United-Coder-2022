@@ -14,8 +14,9 @@ public class DashboardPage {
     WebElement categoriesLink;
     @FindBy(css = "i.fa.fa-sign-out")
     WebElement logoutLink;
+    @FindBy(id = "nav_products")
+    WebElement productsLink;
     FunctionPage functionPage;
-    int timeout = 10;
 
     public DashboardPage(WebDriver driver){
         this.driver = driver;
@@ -24,24 +25,28 @@ public class DashboardPage {
     }
 
     public void clickOnCustomerLink(){
-        functionPage.waitUnitElementPresent(customerListLink,timeout);
+        functionPage.waitUnitElementPresent(customerListLink);
         customerListLink.click();
     }
     public void clickOnCategoriesLink(){
-        functionPage.waitUnitElementPresent(categoriesLink,timeout);
+        functionPage.waitUnitElementPresent(categoriesLink);
         categoriesLink.click();
     }
     public void clickOnLogoutLink(){
-        functionPage.waitUnitElementPresent(logoutLink,timeout);
+        functionPage.waitUnitElementPresent(logoutLink);
         logoutLink.click();
     }
     public boolean verifyLogin(){
-        functionPage.waitUnitElementPresent(logoutLink,timeout);
+        functionPage.waitUnitElementPresent(logoutLink);
         if (logoutLink.isDisplayed()){
             return true;
         }else {
             return false;
         }
+    }
+    public void clickOnProductsLink(){
+        functionPage.waitUnitElementPresent(productsLink);
+        productsLink.click();
     }
 
 

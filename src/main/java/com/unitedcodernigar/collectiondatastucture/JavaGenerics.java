@@ -1,9 +1,5 @@
 package com.unitedcodernigar.collectiondatastucture;
-
-import com.beust.ah.A;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class JavaGenerics {
     public static void main(String[] args) {
