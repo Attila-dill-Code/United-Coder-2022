@@ -48,7 +48,7 @@ public class JUnittestDemo1 {
         Assertions.assertEquals(s1,s2);
     }
 
-    @Disabled   // the code don't run
+    //@Disabled   // the code don't run
     @Test
     public void power(){
         System.out.println("Testing the power of a number");

@@ -34,7 +34,7 @@ public class JUnitTestRunner{
     }
     @Test
     public void loginTest(){
-        loginPage.login("testautomation1","automation123!");
+        loginPage.login();
         Assertions.assertTrue(dashboardPage.verifyLogin());
     }
     @Test
